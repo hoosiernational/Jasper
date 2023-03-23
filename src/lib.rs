@@ -365,6 +365,8 @@ impl JsonParserUtilities {
                     Some(JsonValue::Boolean(true))
                 } else if str == "false" {
                     Some(JsonValue::Boolean(false))
+                } else if str == "null" {
+                    Some(JsonValue::Null)  
                 } else {
                     match str.parse::<f64>() {
                         Ok(f) => Some(JsonValue::Number(f)),
